@@ -54,6 +54,17 @@ app.post('/create',(req,res)=>{
     //console.log(username)
 })
 
+app.post('/read',(req,res)=>{
+    Op.find({name: req.body.username},(err,doc)=>{
+        if(err) {
+            return res.send({error: 'error'})
+        }
+
+        console.log(doc)
+        res.render('read')
+    })
+})
+
 app.listen(port,()=>{
     console.log('Server is running on port: ' + port)
 })
