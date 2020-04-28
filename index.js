@@ -1,7 +1,8 @@
 const express = require('express')
 const path = require('path')
 const hbs = require('hbs')
-require('./connectDB/mongodb')
+require('./db/mongoose')
+require('./crud')
 
 const app = express()
 const port = process.env.PORT || 3000
