@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const hbs = require('hbs')
+const Op = require('./models/crud')
 require('./db/mongoose')
 require('./crud')
 
@@ -15,6 +16,7 @@ app.set('view engine','hbs')
 app.set('views',viewsPath)
 hbs.registerPartials(partialsPath)
 
+app.use(express.urlencoded())
 app.use(express.static(mainPage))
 
 app.get('',(req,res)=>{
@@ -36,6 +38,22 @@ app.get('/update',(req,res)=>{
 app.get('/delete',(req,res)=>{
     res.render('delete')
 })
+
+app.post('/create',(req,res)=>{
+    Op.create({
+        name: req.body.username,
+        email: req.body.email,
+        password: req.body.password
+    },(error)=>{
+        if(error){
+            console.log(error)
+            
+        }
+        res.render('create')
+    })
+    //console.log(username)
+})
+
 app.listen(port,()=>{
     console.log('Server is running on port: ' + port)
 })
