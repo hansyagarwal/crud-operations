@@ -65,6 +65,26 @@ app.post('/read',(req,res)=>{
     })
 })
 
+app.post('/update',(req,res)=>{
+    Op.findOneAndUpdate({name: req.body.username},{password: req.body.password},(err,doc)=>{
+        if(err) {
+            return res.send({error: 'error'})
+        }
+        console.log(doc.password)
+        res.render('update')
+    })
+})
+
+app.post('/delete',(req,res)=>{
+    Op.findOneAndDelete({name: req.body.username},(error,doc)=>{
+        if(error) {
+            return res.send({error: 'error in deleting user'})
+        }
+        console.log(doc)
+        res.render('delete')
+    })
+})
+
 app.listen(port,()=>{
     console.log('Server is running on port: ' + port)
 })
