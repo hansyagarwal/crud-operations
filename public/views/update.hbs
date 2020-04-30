@@ -3,21 +3,26 @@
     <head>
         <title></title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/style.css">
     </head>
     <body>
-        <h1>CRUD</h1>
 
-        <h3>This is update part</h3>
+        <div class="container">
+            <h1>CRUD</h1>
+
+        <h3>This is Update part</h3>
 
         {{>header}}
 
         <form action="" method="POST">
-            <label>username</label>
-            <input type="text" name="username">
-            <label>Enter new password</label>
-            <input type="text" name="password">
-            <button>Submit</button>
+            <label>Username</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name="username"> <br><br>
+            <label>New password</label>
+            <input type="text" name="password"><br><br>
+            <button class="btn btn-success">Submit</button>
         </form>
+        </div>
+        
 
         {{>footer}}
     </body>

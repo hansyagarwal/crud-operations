@@ -3,20 +3,24 @@
     <head>
         <title></title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/style.css">
     </head>
     <body>
+        <div class="container">
         <h1>CRUD</h1>
 
-        <h3>This is read part</h3>
+        <h3>This is Read part</h3>
 
         {{>header}}
 
         <form action="" method="POST">
-            <label>Username</label>
-            <input type="text" name="username" placeholder="name">
-            <button>Submit</button>
+            <label>Username</label> &nbsp;
+            <input type="text" name="username" placeholder="name"><br><br>
+            <button class="btn btn-success">Submit</button>
         </form>
 
         {{>footer}}
+        </div>
+        
     </body>
 </html>
