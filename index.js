@@ -3,7 +3,6 @@ const path = require('path')
 const hbs = require('hbs')
 const Op = require('./models/crud')
 require('./db/mongoose')
-require('./crud')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -59,7 +58,7 @@ app.post('/read',(req,res)=>{
         if(err) {
             return res.send({error: 'error'})
         }
-
+        
         console.log(doc)
         res.render('read')
     })

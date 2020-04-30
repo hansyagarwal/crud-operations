@@ -14,7 +14,7 @@
 
         {{>header}}
 
-        <form action="" method="POST">
+        <form action="" method="POST" id="create">
             <label>Username</label> &nbsp;
             <input type="text" name="username" placeholder="username"><br><br>
             <label>Email</label> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -23,10 +23,12 @@
             <input type="password" name="password" placeholder="password"><br><br>
             <button class="btn btn-success">Submit</button>
         </form>
+
+        <p id="create1"></p>
          {{>footer}}
         </div>
 
 
-        <script src="../../crud.js"></script>
+        <script src="../js/crud.js"></script>
     </body>
 </html>
