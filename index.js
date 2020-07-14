@@ -60,7 +60,9 @@ app.post('/read',(req,res)=>{
         }
         
         console.log(doc)
-        res.render('read')
+        res.render('read',{
+            email: doc[0].email
+        })
     })
 })
 
